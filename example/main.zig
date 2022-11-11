@@ -286,7 +286,6 @@ const ChatWebsocketHandler = struct {
     }
 
     pub fn onMessage(self: *ChatWebsocketHandler, message: []const u8, binary: bool) !void {
-        _ = self;
         _ = binary;
         std.log.debug("Websocket message: {s}", .{message});
         const allocator = self.websocket.response.allocator;

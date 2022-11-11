@@ -4,6 +4,7 @@ pub fn build(b: *Builder) void {
     const mode = b.standardReleaseOptions();
     const exe = b.addExecutable("zhttpd", "example/main.zig");
 
+    exe.use_stage1 = true;
     exe.setBuildMode(mode);
     exe.addPackagePath("zhp", "src/zhp.zig");
     exe.valgrind_support = true;
